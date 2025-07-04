@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFT Marketplace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #000;
+    }
+    
+    .app-container {
+      position: relative;
+      width: 430px;
+      height: 932px;
+      background: #141414;
+      overflow: hidden;
+    }
+    
+    /* Модальное окно (изначально скрыто) */
+    .registration-modal {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.73);
+      backdrop-filter: blur(2.5px);
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+    
+    .modal-text {
+      color: white;
+      font-size: 25px;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 40px;
+      width: 330px;
+    }
+    
+    .register-btn {
+      width: 275px;
+      height: 42px;
+      background: #1689FF;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 15px;
+      font-weight: 400;
+      cursor: pointer;
+    }
+    
+    /* Все стили из вашего макета */
+    .wallet-btn {
+      width: 115px;
+      height: 32px;
+      position: absolute;
+      left: 301px;
+      top: 19px;
+      background: #11253A;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+    }
+    
+    .menu-btn {
+      width: 53px;
+      height: 32px;
+      position: absolute;
+      left: 13px;
+      top: 19px;
+      background: #282727;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Основной контент -->
+    <div id="mainContent">
+      <!-- Весь ваш оригинальный HTML-код -->
+      <div style="width: 115px; height: 32px; left: 301px; top: 19px; position: absolute; background: #11253A; border-radius: 20px"></div>
+      <div style="width: 53px; height: 32px; left: 13px; top: 19px; position: absolute; background: #282727; border-radius: 20px"></div>
+      <div style="width: 20px; height: 20px; left: 390px; top: 25px; position: absolute; background: white; border-radius: 20px"></div>
+      <img style="width: 405px; height: 85px; left: 13px; top: 59px; position: absolute" src="img\ads.png" />
+      <div style="width: 14px; height: 0px; left: 399px; top: 28px; position: absolute; transform: rotate(90deg); transform-origin: top left; outline: 2px black solid; outline-offset: -1px"></div>
+      <div style="width: 14px; height: 0px; left: 407px; top: 34px; position: absolute; transform: rotate(180deg); transform-origin: top left; outline: 2px black solid; outline-offset: -1px"></div>
+      <div style="left: 12px; top: 153px; position: absolute; color: white; font-size: 25px; font-family: Inter; font-weight: 600; word-wrap: break-word">Все предметы</div>
+      <div style="left: 217px; top: 153px; position: absolute; color: #6D6D71; font-size: 25px; font-family: Inter; font-weight: 600; word-wrap: break-word">Коллекция </div>
+      <div style="width: 104px; height: 54px; left: 13px; top: 203px; position: absolute; background: #282727; border-radius: 15px"></div>
+      <div style="width: 66px; left: 23px; top: 214px; position: absolute; color: #6D6D71; font-size: 12px; font-family: Inter; font-weight: 600; word-wrap: break-word">Коллекция </div>
+      <div style="width: 22px; left: 23px; top: 229px; position: absolute; color: white; font-size: 12px; font-family: Inter; font-weight: 600; word-wrap: break-word">Все</div>
+      <img style="width: 10px; height: 23px; left: 98px; top: 218px; position: absolute" src="img\image 163.png" />
+      <div style="width: 104px; height: 54px; left: 128px; top: 203px; position: absolute; background: #282727; border-radius: 15px"></div>
+      <div style="width: 66px; left: 138px; top: 214px; position: absolute; color: #6D6D71; font-size: 12px; font-family: Inter; font-weight: 600; word-wrap: break-word">Модель</div>
+      <div style="width: 22px; left: 138px; top: 229px; position: absolute; color: white; font-size: 12px; font-family: Inter; font-weight: 600; word-wrap: break-word">Все</div>
+      <img style="width: 10px; height: 23px; left: 213px; top: 218px; position: absolute" src="img\image 163.png" />
+      <div style="width: 104px; height: 54px; left: 243px; top: 203px; position: absolute; background: #282727; border-radius: 15px"></div>
+      <div style="width: 66px; left: 253px; top: 214px; position: absolute; color: #6D6D71; font-size: 12px; font-family: Inter; font-weight: 600; word-wrap: break-word">Фон </div>
+      <div style="width: 22px; left: 253px; top: 229px; position: absolute; color: white; font-size: 12px; font-family: Inter; font-weight: 600; word-wrap: break-word">Все</div>
+      <img style="width: 10px; height: 23px; left: 328px; top: 218px; position: absolute" src="img\image 163.png" />
+      <div style="width: 58px; height: 54px; left: 358px; top: 203px; position: absolute; background: #282727; border-radius: 15px"></div>
+      <img style="width: 23px; height: 27px; left: 376px; top: 218px; position: absolute" src="img\image 163.png" />
+      <div style="width: 193px; height: 262px; left: 11px; top: 282px; position: absolute; background: #282727; border-radius: 15px"></div>
+      <div style="width: 193px; height: 262px; left: 11px; top: 554px; position: absolute; background: #282727; border-radius: 15px"></div>
+      <div style="width: 193px; height: 262px; left: 227px; top: 554px; position: absolute; background: #282727; border-radius: 15px"></div>
+      <div style="width: 193px; height: 262px; left: 227px; top: 282px; position: absolute; background: #282727; border-radius: 15px"></div>
+      <img style="width: 178px; height: 171px; left: 19px; top: 287px; position: absolute; border-radius: 15px" src="img\lolpop1.png" />
+      <img style="width: 178px; height: 171px; left: 19px; top: 559px; position: absolute; border-radius: 15px" src="img\lolpop2.png" />
+      <img style="width: 178px; height: 171px; left: 235px; top: 559px; position: absolute; border-radius: 15px" src="img\lolpop3.png" />
+      <img style="width: 178px; height: 171px; left: 235px; top: 287px; position: absolute; border-radius: 15px" src="img\toybear.png" />
+      <div style="width: 63px; left: 18px; top: 466px; position: absolute; color: white; font-size: 17px; font-family: Inter; font-weight: 600; word-wrap: break-word">Lol Pop</div>
+      <div style="width: 63px; left: 18px; top: 738px; position: absolute; color: white; font-size: 17px; font-family: Inter; font-weight: 600; word-wrap: break-word">Lol Pop</div>
+      <div style="width: 74px; left: 234px; top: 738px; position: absolute; color: white; font-size: 17px; font-family: Inter; font-weight: 600; word-wrap: break-word">Toy Bear</div>
+      <div style="width: 63px; left: 234px; top: 466px; position: absolute; color: white; font-size: 17px; font-family: Inter; font-weight: 600; word-wrap: break-word">Lol Pop</div>
+      <div style="width: 42px; left: 18px; top: 487px; position: absolute; color: #6D6D71; font-size: 11px; font-family: Inter; font-weight: 500; word-wrap: break-word">#18345</div>
+      <div style="width: 41px; left: 18px; top: 759px; position: absolute; color: #6D6D71; font-size: 11px; font-family: Inter; font-weight: 500; word-wrap: break-word">#12395</div>
+      <div style="width: 41px; left: 234px; top: 759px; position: absolute; color: #6D6D71; font-size: 11px; font-family: Inter; font-weight: 500; word-wrap: break-word">#18555</div>
+      <div style="width: 41px; left: 234px; top: 487px; position: absolute; color: #6D6D71; font-size: 11px; font-family: Inter; font-weight: 500; word-wrap: break-word">#29125</div>
+      <div style="width: 144px; height: 27px; left: 18px; top: 510px; position: absolute; background: #1689FF; border-radius: 20px"></div>
+      <div style="width: 144px; height: 27px; left: 18px; top: 782px; position: absolute; background: #1689FF; border-radius: 20px"></div>
+      <div style="width: 144px; height: 27px; left: 234px; top: 782px; position: absolute; background: #1689FF; border-radius: 20px"></div>
+      <div style="width: 144px; height: 27px; left: 234px; top: 510px; position: absolute; background: #1689FF; border-radius: 20px"></div>
+      <div style="width: 28px; height: 27px; left: 169px; top: 510px; position: absolute; background: #3A3A3A; border-radius: 20px"></div>
+      <div style="width: 28px; height: 27px; left: 169px; top: 782px; position: absolute; background: #3A3A3A; border-radius: 20px"></div>
+      <div style="width: 28px; height: 27px; left: 385px; top: 782px; position: absolute; background: #3A3A3A; border-radius: 20px"></div>
+      <div style="width: 28px; height: 27px; left: 385px; top: 510px; position: absolute; background: #3A3A3A; border-radius: 20px"></div>
+      <img style="width: 15px; height: 15px; left: 176px; top: 516px; position: absolute" src="img\basket.png" />
+      <img style="width: 15px; height: 15px; left: 176px; top: 788px; position: absolute" src="img\basket.png" />
+      <img style="width: 16px; height: 15px; left: 391px; top: 788px; position: absolute" src="img\basket.png" />
+      <img style="width: 16px; height: 15px; left: 391px; top: 516px; position: absolute" src="img\basket.png" />
+      <img style="width: 19px; height: 19px; left: 67px; top: 514px; position: absolute" src="img\ton.png" />
+      <img style="width: 19px; height: 19px; left: 67px; top: 786px; position: absolute" src="img\ton.png" />
+      <img style="width: 20px; height: 19px; left: 282px; top: 786px; position: absolute" src="img\ton.png" />
+      <img style="width: 20px; height: 19px; left: 282px; top: 514px; position: absolute" src="img\ton.png" />
+      <img style="width: 19px; height: 19px; left: 309px; top: 26px; position: absolute" src="img\ton.png" />
+      <div style="width: 25px; left: 90px; top: 516px; position: absolute; color: white; font-size: 12px; font-family: Inter; font-weight: 600; word-wrap: break-word">1.97</div>
+      <div style="width: 28px; left: 90px; top: 788px; position: absolute; color: white; font-size: 12px; font-family: Inter; font-weight: 600; word-wrap: break-word">3.29</div>
+      <div style="width: 23px; left: 306px; top: 788px; position: absolute; color: white; font-size: 12px; font-family: Inter; font-weight: 600; word-wrap: break-word">150</div>
+      <div style="width: 28px; left: 306px; top: 516px; position: absolute; color: white; font-size: 12px; font-family: Inter; font-weight: 600; word-wrap: break-word">2.99</div>
+      <div style="left: 334px; top: 27px; position: absolute; color: white; font-size: 15px; font-family: Inter; font-weight: 600; word-wrap: break-word">0 TON</div>
+    </div>
+    
+    <!-- Модальное окно регистрации (изначально скрыто) -->
+    <div class="registration-modal" id="registrationModal">
+      <div class="modal-text">Зарегистрируйтесь в боте<br>по кнопке ниже</div>
+      <div class="register-btn">Зарегистрироваться</div>
+    </div>
+  </div>
+
+  <script>
+    // Через 3 секунды показываем модальное окно
+    setTimeout(function() {
+      document.getElementById('registrationModal').style.display = 'flex';
+    }, 3000);
+  </script>
+</body>
+</html>
